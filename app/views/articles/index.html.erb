@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th> ID </th>
+      <th> Name </th>
+      <th> Body </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do | article | %>
+      <tr>
+        <td> <%= article.id %> </td>
+        <td> <%= article.name %> </td>
+        <td> <%= article.body %> </td>
+        <td> <button> <%= link_to "View", article_show_path(article.id), method: :get %> </button> </td>
+        <td> <button> <%= link_to "Edit", article_edit_path(article.id), method: :get %> </button> </td>
+        <td> <button> <%= link_to "Delete", delete_path(article.id), method: :delete, data: { confirm: "Are you sure?"} %> </button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<button> <%= link_to "Add Article", article_new_path, method: :get %> </button>
+

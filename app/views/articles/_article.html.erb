@@ -1,0 +1,14 @@
+<div>
+  ID: <%= article.id %>
+</div>
+
+<div>
+  Name: <%= article.name %>
+</div>
+
+<div>
+  Body: <%= article.body %>
+</div>
+<button> <%= link_to "Back", articles_path, method: :get %> </button>
+<button> <%= link_to "Edit", article_edit_path(article.id), method: :get %> </button>
+<button> <%= link_to "Delete", delete_path(article.id), method: :delete, data: { confirm: "Are you sure?"} %> </button>
